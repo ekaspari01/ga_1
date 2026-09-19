@@ -1,40 +1,32 @@
 #ifndef INVENTARIO_H
 #define INVENTARIO_H
 
-#include "Item.h"
+#include <cstddef>
 #include <vector>
-#include <string>
-
-using namespace std;
+#include "Item.h"
 
 class Inventario
 {
+private:
+    std::vector<Item> itens;
+    static constexpr std::size_t CAPACIDADE = 8;
+
 public:
     Inventario();
     ~Inventario();
 
-    void adicionarItem(Item item);
+    bool adicionar(const Item& item);              // false se estiver cheio
+    bool removerPorPosicao(std::size_t posicao);   // posicao comeca em 0
+    bool temItem(int id) const;
 
-    bool possuiItem(string nome);
+    const std::vector<Item>& getItens() const;
+    std::size_t tamanho() const;
+    bool estaVazio() const;
+    bool estaCheio() const;
+    static std::size_t getCapacidade();
 
-    void mostrar();
-
-    void adicionarTesouro(int quantidade);
-    int getTesouro();
-
-    void adicionarProvisao(int quantidade);
-    int getProvisoes();
-
-    bool usarProvisao(int& energia);
-
-    vector<Item>& getItens();
-
-private:
-    vector<Item> itens;
-
-    int tesouro;
-    int provisoes;
-
+    int bonusArma() const;   // maior bonus entre as armas carregadas
+    void listar() const;
 };
 
 #endif

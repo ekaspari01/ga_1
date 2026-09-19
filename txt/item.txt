@@ -1,0 +1,5 @@
+# id|nome|tipo|valor|descricao
+# tipo: ARMA (valor = bonus de habilidade em combate) | CURA (valor = energia recuperada) | ESPECIAL
+1|Chave velha|ESPECIAL|0|Abre a porta dos fundos da casa abandonada.
+2|Espada antiga|ARMA|2|Uma lamina antiga, mas ainda muito afiada.
+3|Pocao de vida|CURA|8|Liquido vermelho que restaura suas forcas.

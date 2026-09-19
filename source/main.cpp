@@ -4,73 +4,52 @@ g++ cena.cpp decisao.cpp inventario.cpp item.cpp jogador.cpp jogo.cpp main.cpp m
 */
 #include "../include/Jogo.h"
 #include <iostream>
-
-using namespace std;
-
-void telaAbertura()
-{
-    Jogo jogo;
-
-    int opcao;
-
-    do
-    {
-        cout << endl;
-        cout << "=================================" << endl;
-        cout << "          AVENTURA RPG           " << endl;
-        cout << "=================================" << endl;
-        cout << endl;
-
-        cout << "1 - Novo jogo" << endl;
-        cout << "2 - Carregar jogo" << endl;
-        cout << "3 - Exibir creditos" << endl;
-        cout << "4 - Encerrar aplicacao" << endl;
-
-        cout << endl;
-        cout << "Escolha: ";
-        cin >> opcao;
-
-        switch (opcao)
-        {
-            case 1:
-                jogo.iniciarNovoJogo();
-                jogo.executar();
-                break;
-
-            case 2:
-                jogo.carregarJogo();
-                jogo.executar();
-                break;
-
-            case 3:
-                cout << endl;
-                cout << "=================================" << endl;
-                cout << "             CREDITOS            " << endl;
-                cout << "=================================" << endl;
-                cout << endl;
-                cout << "Programadores:" << endl;
-                cout << "Elisandro Kaspari" << endl;
-                // cout << "Nome do segundo programador" << endl;
-                cout << endl;
-                break;
-
-            case 4:
-                cout << endl;
-                cout << "Encerrando aplicacao..." << endl;
-                break;
-
-            default:
-                cout << endl;
-                cout << "Opcao invalida!" << endl;
-                break;
-        }
-
-    } while (opcao != 4);
-}
+#include <string>
 
 int main()
 {
-    telaAbertura();
+    Jogo jogo;
 
+    while (true)
+    {
+        std::cout << std::endl;
+        std::cout << "=== AVENTURA ===" << std::endl;
+        std::cout << "1 - Novo jogo" << std::endl;
+        std::cout << "2 - Carregar jogo" << std::endl;
+        std::cout << "0 - Sair" << std::endl;
+        std::cout << "Opcao: ";
+
+        std::string opcao;
+
+        if (!std::getline(std::cin >> std::ws, opcao))
+        {
+            break;
+        }
+
+        if (opcao == "1")
+        {
+            if (jogo.iniciarNovoJogo())
+            {
+                jogo.executar();
+            }
+        }
+        else if (opcao == "2")
+        {
+            if (jogo.carregarJogo())
+            {
+                jogo.executar();
+            }
+        }
+        else if (opcao == "0")
+        {
+            break;
+        }
+        else
+        {
+            std::cout << "Opcao invalida!" << std::endl;
+        }
+    }
+
+    std::cout << "Ate a proxima!" << std::endl;
     return 0;
 }

@@ -3,44 +3,32 @@
 
 #include <string>
 
-using namespace std;
-
+// Classe base: todo personagem (jogador ou monstro) tem HABILIDADE, ENERGIA e SORTE
 class Personagem
 {
-
-public:
-    Personagem();
-    ~Personagem();
-
-    void criarPersonagem();
-
-    void setNome(string nome);
-    string getNome();
-
-    void setHabilidade(int habilidade);
-    int getHabilidade();
-
-    void setEnergia(int energia);
-    int getEnergia();
-
-    void setSorte(int sorte);
-    int getSorte();
-
-    void perderEnergia(int valor);
-    void recuperarEnergia(int valor);
-
-    bool testarSorte();
-
-    void mostrarStatus();
-
-    bool estaVivo();
-
-private:
-    string nome;
+protected:
+    std::string nome;
     int habilidade;
     int energia;
     int sorte;
-    int sorteInicial;
 
+public:
+    Personagem();
+    Personagem(std::string nome, int habilidade, int energia, int sorte);
+    virtual ~Personagem();
+
+    void setNome(std::string nome);
+    void setHabilidade(int habilidade);
+    void setEnergia(int energia);
+    void setSorte(int sorte);
+
+    std::string getNome() const;
+    int getHabilidade() const;
+    int getEnergia() const;
+    int getSorte() const;
+
+    bool estaVivo() const;
+    void receberDano(int dano);
 };
+
 #endif

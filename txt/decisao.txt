@@ -1,49 +1,19 @@
-1|1|Entrar na casa|2
-1|2|Continuar pela floresta|15
-
-2|1|Entrar na casa|3
-2|2|Ir embora|1
-
-3|1|Procurar pela casa|4
-3|2|Sair pela porta dos fundos|6
-
-4|1|Usar a chave na porta|5
-4|2|Voltar|3
-
-5|1|Seguir pela trilha|6
-5|2|Voltar para a casa|3
-
+# cena|numeroDaOpcao|texto|proximaCena
+1|1|Caminhar pela floresta|2
+2|1|Entrar na casa abandonada|3
+3|1|Procurar embaixo da mesa velha|4
+4|1|Tentar abrir a porta dos fundos com a chave|5
+5|1|Seguir a trilha|6
 6|1|Entrar na caverna|7
-6|2|Voltar para a casa|3
-
 7|1|Seguir pelo caminho da esquerda|8
 7|2|Seguir pelo caminho da direita|9
-
-8|1|Abrir o bau|10
-8|2|Voltar|7
-
-9|1|Continuar pelo corredor|11
-9|2|Voltar|7
-
-10|1|Pegar a espada|12
-10|2|Deixar o bau|8
-
-11|1|Abrir a porta de pedra|13
-11|2|Voltar|9
-
-12|1|Seguir ate a porta de pedra|11
-12|2|Voltar para a sala|8
-
-13|1|Lutar contra o monstro|14
-13|2|Fugir|15
-
-14|1|Pegar o tesouro|14
-14|2|Sair da caverna|17
-
-15|1|Voltar para a floresta|16
-15|2|Tentar novamente|6
-
-16|1|Entrar novamente na casa|3
-16|2|Continuar pela floresta|17
-
-17|1|Encerrar aventura|17
+7|3|Fugir da caverna|15
+8|1|Entrar na sala das tochas|10
+9|1|Seguir pelo corredor escuro|11
+10|1|Abrir o bau antigo|12
+10|2|Deixar o bau e voltar para a caverna|7
+11|1|Abrir a grande porta de pedra|13
+11|2|Fugir da caverna|15
+12|1|Voltar e seguir pelo corredor escuro|9
+15|1|Correr pela floresta|16
+16|1|Procurar a saida da floresta|17

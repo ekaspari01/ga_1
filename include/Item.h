@@ -3,37 +3,39 @@
 
 #include <string>
 
+enum class TipoItem
+{
+    ARMA,      // valor = bonus somado a HABILIDADE nos combates (automatico)
+    CURA,      // valor = energia recuperada ao usar (item e consumido)
+    ESPECIAL   // sem efeito direto (chaves, objetos de historia)
+};
+
 class Item
 {
 private:
+    int id;
     std::string nome;
-    char tipo;
-    bool combate;
-    int bonusFA;
-    int dano;
+    TipoItem tipo;
+    int valor;
+    std::string descricao;
 
 public:
     Item();
+    Item(int id, std::string nome, TipoItem tipo, int valor, std::string descricao);
     ~Item();
 
-    Item(std::string nome, char tipo, bool combate, int bonusFA, int dano);
+    int getId() const;
+    std::string getNome() const;
+    TipoItem getTipo() const;
+    int getValor() const;
+    std::string getDescricao() const;
 
-    void setNome(std::string nome);
-    std::string getNome();
+    std::string getTipoTexto() const;
+    std::string descreverEfeito() const;
 
-    void setTipo(char tipo);
-    char getTipo();
-
-    void setCombate(bool combate);
-    bool getCombate();
-
-    void setBonusFA(int bonusFA);
-    int getBonusFA();
-
-    void setDano(int dano);
-    int getDano();
-
-    void mostrar();
+    // "ARMA" -> TipoItem::ARMA (texto desconhecido vira ESPECIAL)
+    static TipoItem tipoDeTexto(const std::string& texto);
+    static std::string tipoParaTexto(TipoItem tipo);
 };
 
 #endif

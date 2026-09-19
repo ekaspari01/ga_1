@@ -1,91 +1,83 @@
 #include "../include/Item.h"
-#include <iostream>
-
-using namespace std;
+#include <cctype>
 
 Item::Item()
 {
+    id = 0;
     nome = "";
-    tipo = 'c';
-    combate = false;
-    bonusFA = 0;
-    dano = 0;
+    tipo = TipoItem::ESPECIAL;
+    valor = 0;
+    descricao = "";
 }
+
+Item::Item(int id, std::string nome, TipoItem tipo, int valor, std::string descricao)
+{
+    this->id = id;
+    this->nome = nome;
+    this->tipo = tipo;
+    this->valor = valor;
+    this->descricao = descricao;
+}
+
 Item::~Item()
 {
-
-}
-Item::Item(string nome, char tipo, bool combate, int bonusFA, int dano)
-{
-    this->nome = nome;
-    this->tipo = tipo;
-    this->combate = combate;
-    this->bonusFA = bonusFA;
-    this->dano = dano;
 }
 
-void Item::setNome(string nome)
+int Item::getId() const { return id; }
+std::string Item::getNome() const { return nome; }
+TipoItem Item::getTipo() const { return tipo; }
+int Item::getValor() const { return valor; }
+std::string Item::getDescricao() const { return descricao; }
+
+std::string Item::getTipoTexto() const
 {
-    this->nome = nome;
+    return tipoParaTexto(tipo);
 }
 
-string Item::getNome()
+std::string Item::descreverEfeito() const
 {
-    return nome;
+    switch (tipo)
+    {
+        case TipoItem::ARMA:
+            return "+" + std::to_string(valor) + " de habilidade em combate";
+        case TipoItem::CURA:
+            return "recupera " + std::to_string(valor) + " de energia";
+        default:
+            return "item especial";
+    }
 }
 
-void Item::setTipo(char tipo)
+TipoItem Item::tipoDeTexto(const std::string& texto)
 {
-    this->tipo = tipo;
+    std::string t = texto;
+
+    for (char& c : t)
+    {
+        c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
+    }
+
+    if (t == "ARMA")
+    {
+        return TipoItem::ARMA;
+    }
+
+    if (t == "CURA")
+    {
+        return TipoItem::CURA;
+    }
+
+    return TipoItem::ESPECIAL;
 }
 
-char Item::getTipo()
+std::string Item::tipoParaTexto(TipoItem tipo)
 {
-    return tipo;
-}
-
-void Item::setCombate(bool combate)
-{
-    this->combate = combate;
-}
-
-bool Item::getCombate()
-{
-    return combate;
-}
-
-void Item::setBonusFA(int bonusFA)
-{
-    this->bonusFA = bonusFA;
-}
-
-int Item::getBonusFA()
-{
-    return bonusFA;
-}
-
-void Item::setDano(int dano)
-{
-    this->dano = dano;
-}
-
-int Item::getDano()
-{
-    return dano;
-}
-
-void Item::mostrar()
-{
-    cout << nome;
-
-    if (tipo == 'w')
-        cout << " [Arma]";
-
-    else if (tipo == 'r')
-        cout << " [Armadura]";
-
-    else
-        cout << " [Comum]";
-
-    cout << endl;
+    switch (tipo)
+    {
+        case TipoItem::ARMA:
+            return "ARMA";
+        case TipoItem::CURA:
+            return "CURA";
+        default:
+            return "ESPECIAL";
+    }
 }

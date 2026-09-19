@@ -1,106 +1,100 @@
-#include "../include/inventario.h"
-
+#include "../include/Inventario.h"
 #include <iostream>
-
-using namespace std;
 
 Inventario::Inventario()
 {
-    tesouro = 0;
-    provisoes = 0;
 }
+
 Inventario::~Inventario()
 {
-    
-}
-void Inventario::adicionarItem(Item item)
-{
-    itens.push_back(item);
-
-    cout << endl;
-    cout << "Item adquirido: " << item.getNome() << endl;
 }
 
-bool Inventario::possuiItem(string nome)
+bool Inventario::adicionar(const Item& item)
 {
-    for (Item& item : itens)
+    if (estaCheio())
     {
-        if (item.getNome() == nome)
+        return false;
+    }
+
+    itens.push_back(item);
+    return true;
+}
+
+bool Inventario::removerPorPosicao(std::size_t posicao)
+{
+    if (posicao >= itens.size())
+    {
+        return false;
+    }
+
+    itens.erase(itens.begin() + static_cast<std::ptrdiff_t>(posicao));
+    return true;
+}
+
+bool Inventario::temItem(int id) const
+{
+    for (const Item& item : itens)
+    {
+        if (item.getId() == id)
+        {
             return true;
+        }
     }
 
     return false;
 }
 
-void Inventario::mostrar()
+const std::vector<Item>& Inventario::getItens() const
 {
-    cout << endl;
-    cout << "================================" << endl;
-    cout << "           INVENTARIO" << endl;
-    cout << "================================" << endl;
+    return itens;
+}
 
-    cout << endl;
-    cout << "ITENS:" << endl;
+std::size_t Inventario::tamanho() const
+{
+    return itens.size();
+}
 
-    if (itens.empty())
+bool Inventario::estaVazio() const
+{
+    return itens.empty();
+}
+
+bool Inventario::estaCheio() const
+{
+    return itens.size() >= CAPACIDADE;
+}
+
+std::size_t Inventario::getCapacidade()
+{
+    return CAPACIDADE;
+}
+
+int Inventario::bonusArma() const
+{
+    int melhor = 0;
+
+    for (const Item& item : itens)
     {
-        cout << "Nenhum item." << endl;
-    }
-    else
-    {
-        for (int i = 0; i < (int)itens.size(); i++)
+        if (item.getTipo() == TipoItem::ARMA && item.getValor() > melhor)
         {
-            cout << i + 1 << " - ";
-            itens[i].mostrar();
+            melhor = item.getValor();
         }
     }
 
-    cout << endl;
-    cout << "Tesouro:   " << tesouro << " moedas" << endl;
-    cout << "Provisoes: " << provisoes << endl;
-
-    cout << "================================" << endl;
+    return melhor;
 }
 
-void Inventario::adicionarTesouro(int quantidade)
+void Inventario::listar() const
 {
-    tesouro += quantidade;
-}
-
-int Inventario::getTesouro()
-{
-    return tesouro;
-}
-
-void Inventario::adicionarProvisao(int quantidade)
-{
-    provisoes += quantidade;
-}
-
-int Inventario::getProvisoes()
-{
-    return provisoes;
-}
-
-bool Inventario::usarProvisao(int& energia)
-{
-    if (provisoes <= 0)
+    for (std::size_t i = 0; i < itens.size(); i++)
     {
-        cout << "Voce nao possui provisoes." << endl;
-        return false;
+        const Item& item = itens[i];
+
+        std::cout << "  " << (i + 1) << " - "
+                  << item.getNome()
+                  << " [" << item.getTipoTexto() << "] "
+                  << "(" << item.descreverEfeito() << ") - "
+                  << item.getDescricao()
+                  << std::endl;
     }
-
-    provisoes--;
-
-    energia += 4;
-
-    cout << "Voce utilizou uma provisao." << endl;
-    cout << "Energia recuperada: +4" << endl;
-
-    return true;
-}
-
-vector<Item>& Inventario::getItens()
-{
-    return itens;
 }
