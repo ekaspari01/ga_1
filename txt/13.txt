@@ -1,0 +1,10 @@
+#13
+No topo da escadaria ha uma pequena antessala com um banco de pedra
+e uma janela estreita. Por um instante, o silencio e total.
+Voce respira fundo e cuida dos ferimentos.
+Diante de voce, uma porta dupla de ferro pulsa com luz esverdeada.
+Do outro lado, uma voz seca e fria ecoa:
+"Entre, mortal. Ha seculos ninguem me visita."
+Voce ainda pode desistir e deixar o vale a propria sorte.
+#16: Abrir a porta e enfrentar Malachar
+#17: Desistir e deixar a torre

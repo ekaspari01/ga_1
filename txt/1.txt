@@ -1,0 +1,11 @@
+#1
+O sol se poe sobre o Vale Sombrio quando voce chega a Pedravale.
+As janelas se fecham assim que os moradores te avistam.
+Uma velha curandeira segura seu braco e sussurra:
+"Malachar, o feiticeiro, despertou na Torre Esquecida. Toda noite
+os mortos andam pela floresta. Somente alguem corajoso pode
+destrui-lo."
+Ela te entrega uma tocha e um mapa antigo da regiao.
+Ao longe, a torre negra corta o ceu vermelho.
+#2: Partir agora pela Floresta Sombria
+#3: Passar na taverna antes de partir

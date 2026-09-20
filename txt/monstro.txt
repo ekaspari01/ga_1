@@ -1,0 +1,6 @@
+# id|nome|habilidade|energia|provisoes|itens|tesouros
+# (saque: IDs de item.txt separados por virgula)
+1|Lobo Sombrio|6|6|3||
+2|Esqueleto Guerreiro|7|8|||10
+3|Aranha Gigante|7|8|4||12
+4|Malachar|9|14|||11

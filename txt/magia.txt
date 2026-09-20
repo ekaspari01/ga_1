@@ -1,0 +1,4 @@
+# nome|custo_de_energia|dano|id_do_item (opcional)
+Bola de Fogo|3|4|14
+Raio Arcano|2|3|15
+Toque Gelido|1|2|16

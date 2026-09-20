@@ -1,0 +1,43 @@
+# item.txt
+# Formato: id|nome|tipo|valor|descricao
+#
+# Tipos:
+#   CURA     provisoes e pocoes: recupera "valor" de ENERGIA
+#   ARMA     soma "valor" na Forca de Ataque (so vale a melhor arma)
+#   TESOURO  itens de valor (sem uso direto)
+#   MAGIA    item que guarda uma magia (ligar no magia.txt pelo ID)
+#   OUTRO    chaves, mapas e itens de historia
+#
+# Os IDs abaixo devem ser os mesmos usados no evento.txt (ITEM),
+# no monstro.txt (saque) e no inicial.txt.
+
+# ---- Provisoes e pocoes (CURA) ----
+1|Pocao de Cura|CURA|4|Recupera 4 pontos de ENERGIA
+2|Pocao de Cura Maior|CURA|8|Recupera 8 pontos de ENERGIA
+3|Provisao|CURA|4|Uma refeicao reforcada para a viagem
+4|Pao de Viagem|CURA|2|Pao duro, mas ainda serve
+
+# ---- Armas (ARMA) ----
+5|Espada Curta|ARMA|1|Lamina leve e facil de manejar (+1 na FA)
+6|Espada Longa|ARMA|2|Lamina bem forjada (+2 na FA)
+7|Machado de Guerra|ARMA|3|Pesado e devastador (+3 na FA)
+8|Adaga|ARMA|1|Pequena e afiada (+1 na FA)
+
+# ---- Tesouros (TESOURO) ----
+10|Bolsa de Moedas|TESOURO|0|Moedas de ouro de reinos antigos
+11|Anel de Ouro|TESOURO|0|Um anel com um simbolo desconhecido
+12|Gema Vermelha|TESOURO|0|Uma gema brilhante e valiosa
+13|Coroa Antiga|TESOURO|0|Coroa de um rei esquecido
+
+# ---- Itens de historia (OUTRO) ----
+17|Chave de Ferro|OUTRO|0|Abre uma porta pesada e enferrujada
+18|Tocha|OUTRO|0|Ilumina lugares escuros
+19|Mapa Antigo|OUTRO|0|Mostra caminhos que poucos conhecem
+
+# ---- Itens magicos (MAGIA) ----
+# Use apenas se a historia tiver magia. Cada um precisa estar ligado a uma
+# magia no magia.txt (4o campo). Exemplo de linha do magia.txt:
+#   Bola de Fogo|2|3|14
+14|Pergaminho de Bola de Fogo|MAGIA|0|Lanca uma bola de fogo (uso unico)
+15|Pergaminho de Raio|MAGIA|0|Lanca um raio (uso unico)
+16|Varinha de Gelo|MAGIA|0|Congela o inimigo (uso unico)

@@ -1,0 +1,6 @@
+#11
+Voce chega ao pe de uma imensa escadaria de pedra que sobe em espiral.
+Do alto vem uma luz verde e um murmurio de palavras antigas.
+Uma segunda escada, mais estreita, desce para uma cripta sob o salao.
+#13: Subir a escadaria ate o topo da torre
+#15: Descer a cripta sob o salao
