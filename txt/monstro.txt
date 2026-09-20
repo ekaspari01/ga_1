@@ -1,2 +1,0 @@
-# id|nome|habilidade|energia
-1|Guardiao do Tesouro|9|18

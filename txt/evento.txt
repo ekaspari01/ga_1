@@ -1,9 +1,0 @@
-# cena|TIPO|p1|p2
-# ITEM        p1 = id do item
-# ENERGIA     p1 = valor (positivo cura, negativo causa dano)
-# COMBATE     p1 = id do monstro, p2 = cena se vencer
-# TESTESORTE  p1 = cena se tiver sorte, p2 = cena se tiver azar
-4|ITEM|1
-12|ITEM|2
-12|ITEM|3
-13|COMBATE|1|14
