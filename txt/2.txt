@@ -1,0 +1,8 @@
+#2
+A Floresta Sombria e um labirinto de galhos retorcidos. A neblina
+engole o luar e o silencio pesa sobre seus ombros.
+Depois de uma hora de caminhada, a trilha se divide.
+A trilha principal, larga e batida, segue em direcao a torre.
+Entre as arvores, porem, voce ouve galhos estalando e vozes baixas.
+#4: Seguir pela trilha principal
+#5: Investigar o barulho entre as arvores

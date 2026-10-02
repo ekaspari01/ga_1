@@ -1,0 +1,13 @@
+m
+Voce empurra as portas. No centro de uma sala redonda, cercado por
+livros flutuantes e chamas verdes, Malachar, o feiticeiro morto-vivo,
+ergue o cajado com um sorriso de caveira.
+"Mais um heroi para a minha colecao!"
+Os olhos vazios brilham e o chao treme. Nao ha mais volta!
+N: Malachar
+M: N
+H: 9
+E: 14
+T: 1000
+I: Anel de Ouro;c;0;0;0
+14;0

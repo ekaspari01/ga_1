@@ -1,0 +1,7 @@
+#6
+A Torre Esquecida se ergue diante de voce, negra como um dente quebrado.
+O grande portao de pedra esta entreaberto e dele vem um ar gelido,
+com cheiro de terra molhada.
+Rente ao muro, uma passagem estreita desce para o subsolo.
+#9: Entrar pelo portao principal
+#10: Descer pela passagem lateral

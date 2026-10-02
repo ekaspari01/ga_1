@@ -1,0 +1,7 @@
+#15
+A cripta guarda o tumulo de um rei esquecido. Sobre o sarcofago
+repousa uma coroa antiga de ouro escuro.
+Um arrepio percorre sua espinha, como se os mortos te observassem.
+Sem perder tempo, voce guarda o tesouro e volta para a escadaria.
+#13: Subir a escadaria ate o topo da torre
+T: 500

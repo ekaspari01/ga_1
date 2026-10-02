@@ -1,0 +1,12 @@
+m
+Voce segue pela trilha principal. Depois de alguns minutos, a
+neblina se agita. Dois olhos amarelos surgem na escuridao,
+seguidos por um rosnado grave.
+Um lobo sombrio, com o pelo coberto de cinzas, salta sobre a trilha
+e bloqueia o seu caminho. Nao ha como evitar a luta!
+N: Lobo Sombrio
+M: N
+H: 6
+E: 6
+P: 1
+6;0
