@@ -1,3 +1,0 @@
-# itens com que o personagem comeca (IDs de item.txt)
-5
-3
